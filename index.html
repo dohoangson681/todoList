@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- BS4  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card__header">
+            <img src="./img/X2oObC4.png" />
+        </div>
+        
+        <div class="card__body">
+            <div class="filter-btn">
+                <a id="one" href="#"><i class="fa-solid fa-bars"></i></i></a>
+                <a id="two" href="#"><i class="fa fa-sort-alpha-down"></i></a>
+                <a id="three" href="#"><i class="fa fa-sort-alpha-up"></i></a>
+                <a id="all" href="#"><i class="fa fa-clock"></i></a>
+                <span class="toggle-btn">
+                    <i class="fa fa-filter"></i>
+                    <i class="fa fa-times"></i>
+                </span>
+            </div>
+            <div class="card__content">
+                <div class="card__title">
+                    <h2 id="todoTask">My Tasks</h2>
+                    <p id="current-date"></p>
+
+                </div>
+                <div class="card__add d-flex ">
+                    <input class="w-80" id="newTask" type="text" placeholder="Enter an activity...">
+                    <input class="mt-4 pr-4 w-80" type="date" id="deadline" placeholder="Enter task's deadline ..."> 
+                    <button id="addItem">
+                        <i id="icon_add_task" class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <div class="card__todo">
+                    <!-- Uncompleted tasks -->
+                    <ul class="todo" id="todo">
+                        
+                    </ul>
+                    <!-- Completed tasks -->
+                    <ul class="todo" id="completed">
+                        
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('.toggle-btn').click(function () {
+                $('.filter-btn').toggleClass('open');
+
+            });
+
+            $('.filter-btn a').click(function () {
+                $('.filter-btn').removeClass('open');
+
+            });
+
+        });
+    </script>
+    <!-- BS4  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script type="module" src="./js/main.js"></script>
+
+
+</body>
+
+</html>
