@@ -70,12 +70,17 @@ let addNewTask = () =>{
     let taskDeadline = document.getElementById("deadline").value ; 
     let status = 0 ; // not done yet
     // console.log(taskName , " " , taskDeadline , " " , status) ;
-    let taksObject = new Task(taskName , taskDeadline , status )  ;
+    if(taskName.trim() != "" && taskDeadline != ""  ){
+        let taksObject = new Task(taskName , taskDeadline , status )  ;
     taskList.addTask(taksObject) ; 
     // console.log(taskList.taskArray) ; 
     showTask(taskList.taskArray) ; 
     setLocalStorage(taskList.taskArray) ;
     resetForm() ;  
+    }else {
+        alert("Chưa điền đủ các trường thông tin !") ; 
+    }
+    
 }
 document.getElementById("addItem").addEventListener("click" , ()=>{
     addNewTask() ; 
@@ -93,25 +98,7 @@ let deleteTask = (index) => {
     titleDefault() ; 
 }
 window.deleteTask = deleteTask ; 
-// let showTaskDone = (arr) => {
-//     let content = "" ; 
-//     arr.map((taskObject)=>{
-//         if(taskObject.status == 1){
-//             content += `
-//             <li class="d-flex justify-content-between">
-//                             <p class="m-0">${taskObject.taskName}</p>
-//                             <div class="task-buttons">
-//                                 <button class="btn-task"><i class="fa-solid fa-check"></i></button>
-//                                 <button onclick = "deleteTask(${index})" class="btn-task">
-//                                 <i class="fa-solid fa-trash"></i>
-//                             </button>
-//                             </div>
-//             </li>
-//             ` ; 
-//         }
-//     })
-//     document.getElementById("completed").innerHTML = content ; 
-// }
+
 let checkTaskDone = (index) => {
     let taskObject = taskList.taskArray[index] ; 
     taskObject.status = 1 ; 
